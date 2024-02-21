@@ -36,33 +36,51 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getUsersFromJsonFile = void 0;
-function getUsersFromJsonFile() {
+/*import { jsonFileUrl } from './config';
+
+export async function getUsersFromJsonFile(): Promise<Member[]> {
+    
+    let data: any;
+    try{
+        const response = await fetch(jsonFileUrl);
+        data = await response.json();
+        return data as Member[];
+    }
+    catch(err){
+        console.error('Error reading file:', err);
+        return data;
+    }
+    
+    
+}
+const report = getUsersFromJsonFile();
+console.log(report);*/
+var fs = require("fs/promises");
+function readJsonFile(filePath) {
     return __awaiter(this, void 0, void 0, function () {
-        var data, response, err_1;
+        var data, jsonData, error_1;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    _a.trys.push([0, 3, , 4]);
-                    return [4 /*yield*/, fetch('member.json')];
+                    _a.trys.push([0, 2, , 3]);
+                    return [4 /*yield*/, fs.readFile('./member.json', 'utf8')];
                 case 1:
-                    response = _a.sent();
-                    return [4 /*yield*/, response.json()];
-                case 2:
                     data = _a.sent();
-                    return [2 /*return*/, data];
-                case 3:
-                    err_1 = _a.sent();
-                    console.error('Error reading file:', err_1);
-                    return [2 /*return*/, data];
-                case 4: return [2 /*return*/];
+                    jsonData = JSON.parse(data);
+                    console.log(jsonData);
+                    return [3 /*break*/, 3];
+                case 2:
+                    error_1 = _a.sent();
+                    console.error('Error reading file:', error_1);
+                    return [3 /*break*/, 3];
+                case 3: return [2 /*return*/];
             }
         });
     });
 }
-exports.getUsersFromJsonFile = getUsersFromJsonFile;
-var report = getUsersFromJsonFile();
-console.log(report);
+var d = './member.json';
+//const filePath = './member.json';
+readJsonFile(d);
 /*
 import * as fs from 'fs/promises';
 

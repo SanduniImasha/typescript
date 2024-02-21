@@ -1,5 +1,4 @@
 "use strict";
-// client.ts
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -37,7 +36,6 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-// Import the function to fetch users from the server
 var memberService_1 = require("./memberService");
 function displayUsersAsHtml() {
     return __awaiter(this, void 0, void 0, function () {

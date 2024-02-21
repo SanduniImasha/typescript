@@ -1,6 +1,3 @@
-// client.ts
-
-// Import the function to fetch users from the server
 import { getUsersFromJsonFile } from './memberService';
 
 async function displayUsersAsHtml() {

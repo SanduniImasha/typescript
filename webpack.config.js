@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  entry: './index.ts',
+  entry: './client.ts',
   module: {
     rules: [
       {
@@ -15,7 +15,7 @@ module.exports = {
     extensions: ['.tsx', '.ts', '.js'],
   },
   output: {
-    filename: 'main.js',
+    filename: 'client.js',
     path: path.resolve(__dirname, 'dist'),
   },
   devServer: {
@@ -23,6 +23,6 @@ module.exports = {
       directory: path.join(__dirname, ''),
     },
     compress: true,
-    port: 8080,
+    port: 5099,
   },
 };

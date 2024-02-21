@@ -5,7 +5,7 @@ export async function getUsersFromJsonFile(): Promise<Member[]> {
     
     let data: any;
     try{
-        const response = await fetch('member.json');
+        const response = await fetch(jsonFileUrl);
         data = await response.json();
         return data as Member[];
     }
@@ -18,6 +18,22 @@ export async function getUsersFromJsonFile(): Promise<Member[]> {
 }
 const report = getUsersFromJsonFile();
 console.log(report);
+/*
+import * as fs from 'fs/promises';
+
+async function readJsonFile(filePath: string): Promise<void> {
+  try {
+    const data = await fs.readFile('./member.json', 'utf8');
+    const jsonData = JSON.parse(data);
+    console.log(jsonData);
+  } catch (error) {
+    console.error('Error reading file:', error);
+  }
+}
+const d = './member.json';
+//const filePath = './member.json';
+readJsonFile(d);
+
 /*
 import * as fs from 'fs/promises';
 

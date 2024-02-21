@@ -1,2 +1,1 @@
-// config.ts
-export const jsonFileUrl = 'member.json';
+export const jsonFileUrl = "./member.json";
